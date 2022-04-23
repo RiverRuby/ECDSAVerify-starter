@@ -21,7 +21,7 @@ Starter repo for web applications using ECDSAVerify
 
 Follow setup instructions from https://github.com/0xPARC/circom-ecdsa to download snarkjs and circom! https://github.com/iden3/snarkjs walks through each step in the script if you want to see the whole pipeline, which I recommend going through. Here is a very helpful diagram of that process to keep on hand while you walk through the code:
 
-![image of snarkjs pipeline from proof generation to verification][https://fvictorio.notion.site/image/https%3a%2f%2fs3-us-west-2.amazonaws.com%2fsecure.notion-static.com%2f5f267294-acb7-4a7b-b68d-a9ffe3fa1c71%2fdiagram.png?table=block&id=2e2fd7a5-4c9e-429e-8d6b-57caa4b06b68&spaceid=999fcf0b-d32c-46d7-922b-b4a5f30b1f90&width=2000&userid=&cache=v2]
+![image of snarkjs pipeline from proof generation to verification](https://fvictorio.notion.site/image/https%3a%2f%2fs3-us-west-2.amazonaws.com%2fsecure.notion-static.com%2f5f267294-acb7-4a7b-b68d-a9ffe3fa1c71%2fdiagram.png?table=block&id=2e2fd7a5-4c9e-429e-8d6b-57caa4b06b68&spaceid=999fcf0b-d32c-46d7-922b-b4a5f30b1f90&width=2000&userid=&cache=v2)
 
 Contact vivekab@mit.edu if you have any questions!
 
