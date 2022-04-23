@@ -1,6 +1,6 @@
 # ECDSAVerify-starter
 
-Starter repo for web applications using ECDSAVerify
+Starter repo for web applications using ECDSAVerify. Need to use zkey chunks from https://github.com/nalinbhardwaj/snarkjs/commit/d1c10a6373c02eaa214968da96e2514ddc8c8b92 to allow efficient in-browser proving.
 
 ## Directories
 
