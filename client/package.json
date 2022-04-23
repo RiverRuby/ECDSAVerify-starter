@@ -1,0 +1,30 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "antd": "^4.19.5",
+    "downloadjs": "^1.4.7",
+    "fs": "^0.0.1-security",
+    "localforage": "^1.10.0",
+    "next": "12.1.4",
+    "perf_hooks": "^0.0.1",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "snarkjs": "git+https://github.com/vb7401/snarkjs.git#fd9612892ec37f60f5ad492868caacbd44a259ab"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.23",
+    "@types/react": "17.0.43",
+    "@types/react-dom": "17.0.14",
+    "eslint": "8.12.0",
+    "eslint-config-next": "12.1.4",
+    "typescript": "4.6.3"
+  }
+}
