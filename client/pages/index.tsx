@@ -5,13 +5,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-import {generateProof, verifyProof, downloadProofFiles} from '../lib/util'
+import {generateProof, verifyProof, downloadProofFiles, checkZkeyStorage} from '../lib/util'
 
 const Home: NextPage = () => {
   const [status, setStatus] = useState(false);
   const [generating, setGenerating] = useState(false);
   const [verifying, setVerifying] = useState(false);
   const [downloading, setDownloading] = useState(false);
+  const [filesDownloaded, setFilesDownloaded] = useState(new Set<string>());
 
   const [proofType, setProofType] = useState("group_message_64_4_7")
   const [proofCount, setProofCount] = useState(0);
@@ -24,12 +25,30 @@ const Home: NextPage = () => {
     await downloadProofFiles(proofType);
     console.timeEnd(`Downloading files for ${proofType}`);
     setDownloading(false);
+    filesDownloaded.add(proofType);
   }
   
   async function buttonGenerateProof() {
+    // check files are downloaded
+    if (!filesDownloaded.has(proofType)) {
+      if (await checkZkeyStorage(proofType)) {
+        filesDownloaded.add(proofType);
+      } else {
+        alert("Need to download zkeys first.");
+        return;
+      }
+    }
+
     setGenerating(true);
     console.time(`Generating proof ${proofCount}`);
-    const res = await generateProof(proofType);
+    let res;
+    try {
+      res = await generateProof(proofType);
+    } catch(e) {
+      console.log(e);
+      setGenerating(false);
+      return;
+    }
     console.timeEnd(`Generating proof ${proofCount}`);
     setGenerating(false);
 
@@ -41,6 +60,11 @@ const Home: NextPage = () => {
   }
 
   async function buttonVerifyProof() {
+    if (proof === "") {
+      alert("Need to generate proof!");
+      return;
+    } 
+
     setVerifying(true);
     console.time(`Verifying proof ${proofCount}`);
     const res = await verifyProof(proof, publicSignals, proofType);
@@ -104,7 +128,7 @@ const Home: NextPage = () => {
           <button 
             className={styles.card} 
             onClick={buttonGenerateProof}
-            disabled={generating}
+            disabled={generating || downloading}
           >
             {
               (generating) ? (
@@ -137,7 +161,7 @@ const Home: NextPage = () => {
               (verifying) ? (
                 <h2>Currently verifying...</h2>
               ) : (
-                <h2>Click to verify proof</h2>
+                <h2>Click to verify above proof</h2>
               )
             }
           </button>

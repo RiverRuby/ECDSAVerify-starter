@@ -29,6 +29,18 @@ async function downloadFromFilename(filename: string) {
   }
 }
 
+export async function checkZkeyStorage(filename: string) {
+  const zkeySuffix = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
+  const filePromises = [];
+  for (const c of zkeySuffix) {
+    const item = await localforage.getItem(`${filename}.zkey${c}`);
+    if (!item) {
+      return false;
+    }
+  }
+  return true;
+}
+
 export const downloadProofFiles = async function (filename: string) {
   const zkeySuffix = ['b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
   const filePromises = [];
