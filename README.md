@@ -1,8 +1,8 @@
 # ECDSAVerify-starter
 
-Initial version at https://ecdsa-verify-starter.vercel.app/. May or may not run on your device yet.
-
 Starter repo for web applications using ECDSAVerify. Need to use zkey chunks from https://github.com/nalinbhardwaj/snarkjs/commit/d1c10a6373c02eaa214968da96e2514ddc8c8b92 to allow efficient in-browser proving.
+
+Initial version at https://ecdsa-verify-starter.vercel.app/. Will need to download a roughly 1G proving key, so if your download speed is slow this will take a while. And expect proof generation for ECDSAVerify to be ~4min.
 
 ## Directories
 

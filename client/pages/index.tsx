@@ -34,7 +34,7 @@ const Home: NextPage = () => {
       if (await checkZkeyStorage(proofType)) {
         filesDownloaded.add(proofType);
       } else {
-        alert("Need to download zkeys first.");
+        alert("Need to download zkeys first! It may take a while.");
         return;
       }
     }
@@ -128,7 +128,7 @@ const Home: NextPage = () => {
           <button 
             className={styles.card} 
             onClick={buttonGenerateProof}
-            disabled={generating || downloading}
+            disabled={generating}
           >
             {
               (generating) ? (
@@ -167,7 +167,7 @@ const Home: NextPage = () => {
           </button>
 
           <div className={styles.card}>
-            <h2>Proof verification: {status ? ' ✅ ' : ' ❌'}</h2>
+            <h2>Proof verification: {status ? ' ✅ ' : ' ❌ '}</h2>
           </div>
         </div>
       </main>
