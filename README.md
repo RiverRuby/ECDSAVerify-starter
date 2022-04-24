@@ -23,8 +23,6 @@ Follow setup instructions from https://github.com/0xPARC/circom-ecdsa to downloa
 
 ![image of snarkjs pipeline from proof generation to verification](https://fvictorio.notion.site/image/https%3a%2f%2fs3-us-west-2.amazonaws.com%2fsecure.notion-static.com%2f5f267294-acb7-4a7b-b68d-a9ffe3fa1c71%2fdiagram.png?table=block&id=2e2fd7a5-4c9e-429e-8d6b-57caa4b06b68&spaceid=999fcf0b-d32c-46d7-922b-b4a5f30b1f90&width=2000&userid=&cache=v2)
 
-Contact vivekab@mit.edu if you have any questions!
-
 ## Client setup
 
 Go to client and run `npm run dev` to open a local version of the web app.
@@ -32,3 +30,5 @@ Go to client and run `npm run dev` to open a local version of the web app.
 ## Disclaimers
 
 This repo uses a fork of snarkjs built by Nalin Bhardwaj and Vivek Bhupatiraju. It chunks zkeys to save browser memory and also loads them in from IndexedDB local storage after being downloaded. This repo is not being maintained and may be exposed to vulnerabilities in the snarkjs code we worked. So PLEASE do not use this for production level apps, and more to just test. Hopefully our additions can be upstreamed to snarkjs and maintained there!
+
+Contact vb7401@gmail.com for any questions or bugs.
