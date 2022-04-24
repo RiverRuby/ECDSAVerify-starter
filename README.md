@@ -6,7 +6,7 @@ Initial version at https://ecdsa-verify-starter.vercel.app/. Will need to downlo
 
 ## Directories
 
-- `client` stores Next.js web application with code to download ECDSAVerify circuits from a S3 bucket + use to verify code
+- `client` stores Next.js web application with code to download chunked ECDSAVerify zkeys from a S3 bucket + use to verify code
 - `circuits` stores all the circom circuits that the web app uses
 - `ecdsa-circuits` stores necessary circuits from https://github.com/0xPARC/circom-ecdsa
   - In a seperate directory instead of a git submodule as I ran into some issues with importing libraries
